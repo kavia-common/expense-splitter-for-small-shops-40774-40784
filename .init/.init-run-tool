@@ -1,0 +1,4 @@
+{
+    "command": "source venv/bin/activate && flask run --host <host> --port <port>",
+    "working_directory": "/home/kavia/workspace/code-generation/expense-splitter-for-small-shops-40774-40784/expense_api"
+}
