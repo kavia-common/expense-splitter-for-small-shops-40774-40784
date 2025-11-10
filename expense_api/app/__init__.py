@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from .routes.health import blp
 from flask_smorest import Api
+from .db import init_app as init_db
 
 
 app = Flask(__name__)
@@ -14,6 +15,8 @@ app.config['OPENAPI_URL_PREFIX'] = '/docs'
 app.config["OPENAPI_SWAGGER_UI_PATH"] = ""
 app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
 
-
+# Initialize API and DB teardown integration
 api = Api(app)
+init_db(app)
+
 api.register_blueprint(blp)
