@@ -5,6 +5,7 @@ from flask_smorest import Api
 from .db import init_app as init_db
 from .routes.members import blp as members_blp  # register members blueprint
 from .routes.expenses import blp as expenses_blp  # register expenses blueprint
+from .routes.balances import blp as balances_blp  # register balances blueprint
 
 
 app = Flask(__name__)
@@ -25,3 +26,4 @@ init_db(app)
 api.register_blueprint(health_blp)
 api.register_blueprint(members_blp)
 api.register_blueprint(expenses_blp)
+api.register_blueprint(balances_blp)
